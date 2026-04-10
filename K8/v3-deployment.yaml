@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: v3-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: v3
+  template:
+    metadata:
+      labels:
+        app: v3
+    spec:
+      containers:
+      - name: v3
+        image: thanasree/insurance:v3
+        ports:
+        - containerPort: 3003
